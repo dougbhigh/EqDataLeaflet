@@ -4,6 +4,8 @@
 //    >Leaaflet Step-1                                                                          //
 //      >logic.js                                                                               //
 //   - create map with earthquake data, change color for depth, radius for magnitude.           //
+//   - input is changeable, usgs site offers datasets for types of eq's and length of data      //
+//     collection. currently, url is pointing to all earthquakes during the past week.          //
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
 var myMap = L.map("map", {center: [33, -50],zoom: 3});
@@ -21,9 +23,7 @@ var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}
 //var url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson";     //all eq, past month
 var url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";      //all eq, past week
 
-
-
-// read Json and create features
+// read Json url and create features
 d3.json(url, function(data) {
     function mapFeatures(feature) {
         return{

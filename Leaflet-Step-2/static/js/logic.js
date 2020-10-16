@@ -5,6 +5,8 @@
 //      >logic.js                                                                               //
 //   - create map with earthquake data, change color for depth, radius for magnitude.           //
 //   - step2 logic adds layer of tectonic plates, multiple base layers and control box.         //
+//   - input is changeable, usgs site offers datasets for types of eq's and length of data      //
+//     collection. currently, url1 is pointing to all earthquakes during the past month.        //
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
 // layer variables
@@ -15,6 +17,7 @@ var plates = new L.LayerGroup();
 const url1 = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson";     //all eq, past month
 //const url1 = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";      //all eq, past week
 
+// url2 provides overlay of global tectonic plates.
 const url2 = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json";
  
 // basemaps variables
@@ -49,17 +52,17 @@ var satellitemap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/
         id: "mapbox/satellite-v9",
         accessToken: API_KEY
     });
-
+// default map (on page load) contains streetmap with both overlays.
 var myMap = L.map("map", {center: [33, -50],zoom: 3,
     layers:[streetmap, plates, earthquakes]
 });
 
-// read in tectonic plate data and add to plates
+// read in tectonic plates data and add to variable 'plates'.
 d3.json(url2, function(data2){
   L.geoJson(data2).addTo(plates);
 });
 
-// read Json and create features
+// read Json url and create features
 d3.json(url1, function(data) {
   function mapFeatures(feature) {
     return{
@@ -94,7 +97,7 @@ d3.json(url1, function(data) {
     return (magnitude + 2) * 1.5;
   }
 
-  // add data points and bind popups
+  // add data points and bind popups to earthquake overlay variable.
   L.geoJson(data, {pointToLayer: function(feature, coords) {
       return L.circleMarker(coords);
       },
