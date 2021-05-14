@@ -1,2 +1,4 @@
-
-config.js
+# my stuff
+api_keys.*
+config.*
+.ipynb_checkpoints
