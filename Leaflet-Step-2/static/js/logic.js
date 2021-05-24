@@ -7,6 +7,7 @@
 //   - step2 logic adds layer of tectonic plates, multiple base layers and control box.         //
 //   - input is changeable, usgs site offers datasets for types of eq's and length of data      //
 //     collection. currently, url1 is pointing to all earthquakes during the past month.        //
+//  *- 5/2021 - git repo and local folder name changed to EqDataLeaflet, no code changes made.  // 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
 // layer variables

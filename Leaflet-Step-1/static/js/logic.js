@@ -6,6 +6,7 @@
 //   - create map with earthquake data, change color for depth, radius for magnitude.           //
 //   - input is changeable, usgs site offers datasets for types of eq's and length of data      //
 //     collection. currently, url is pointing to all earthquakes during the past week.          //
+//  *- 5/2021 - git repo and local folder name changed to EqDataLeaflet, no code changes made.  // 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
 var myMap = L.map("map", {center: [33, -50],zoom: 3});
