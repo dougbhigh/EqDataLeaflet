@@ -7,10 +7,10 @@
 ###
 USGS data comes as JSON via URL and changeable within the Javascript (for example https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson provides data for the past wekk).
 #
-![phase1](https://github.com/dougbhigh/EqDataLeaflet/blob/master/images/phase1.png)
+![phase1](https://github.com/dougbhigh/EqDataLeaflet/blob/main/images/phase1.png)
 #
-![phase2](https://github.com/dougbhigh/EqDataLeaflet/blob/master/images/phase2a.png)
+![phase2](https://github.com/dougbhigh/EqDataLeaflet/blob/main/images/phase2a.png)
 #
-![phase2](https://github.com/dougbhigh/EqDataLeaflet/blob/master/images/phase2b.png)
+![phase2](https://github.com/dougbhigh/EqDataLeaflet/blob/main/images/phase2b.png)
 #
-![phase2](https://github.com/dougbhigh/EqDataLeaflet/blob/master/images/phase2c.png)
+![phase2](https://github.com/dougbhigh/EqDataLeaflet/blob/main/images/phase2c.png)
